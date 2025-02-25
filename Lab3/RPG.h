@@ -16,7 +16,7 @@ class RPG{
         RPG();
         RPG(string name , int health, int strength, int defense, string type);
         void setSkills();
-        void printAction(string RPG);
+        void printAction(string, RPG);
         void updateHealth(int);
         void attack(RPG*);
         void useSkill(RPG*);

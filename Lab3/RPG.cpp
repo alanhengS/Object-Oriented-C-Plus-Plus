@@ -52,8 +52,12 @@ void RPG::updateHealth(int new_health){
 }
 
 
-void RPG::attack(RPG*);
-void RPG::useSkill(RPG*);
+// void RPG::attack(RPG*){
+
+// }
+// void RPG::useSkill(RPG*){
+    
+// }
 
 /**
 * @brief returns whether health is greater than 0
@@ -79,3 +83,4 @@ int RPG::getStrength() const{
 int RPG::getDefense() const{
     return defense;
 }
+

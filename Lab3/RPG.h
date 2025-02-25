@@ -14,12 +14,12 @@ class RPG{
         string skills[SKILL_SIZE];
     public: 
         RPG();
-        RPG(string name , int health, int strength, int defense, string typ);
+        RPG(string name , int health, int strength, int defense, string type);
         void setSkills();
         void printAction(string RPG);
         void updateHealth(int);
         void attack(RPG*);
-        void useSkil(RPG*);
+        void useSkill(RPG*);
         bool isAlive() const;
         string getName() const;
         int getHealth() const;

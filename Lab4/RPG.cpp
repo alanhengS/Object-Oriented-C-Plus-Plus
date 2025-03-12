@@ -1,10 +1,12 @@
 #include "RPG.h"
 
+
+
 RPG::RPG(){
     this->name = "NPC";
-    this->health = 100;
+    this->health = 50;
     this->strength = 10;
-    this->defense = 10;
+    this->defense = 0;
     this->type = "warrior";
     skills[0] = "slash";
     skills[1] = "parry"; 
@@ -52,12 +54,21 @@ void RPG::updateHealth(int new_health){
 }
 
 
-// void RPG::attack(RPG*){
+void RPG::attack(RPG* opponent){
+    int new_health = (*opponent).getHealth() - (strength - (*opponent).getDefense());
+    (*opponent).updateHealth(new_health);
+}
 
-// }
-// void RPG::useSkill(RPG*){
-    
-// }
+void RPG::useSkill(RPG* opponent){
+    int chosen_skill_index;
+    for (int i = 0; i < SKILL_SIZE; i++){
+        printf("Skil %i: %s\n", i, skills[i].c_str());
+    }
+    cout << "Choose a skill to use: Enter 0 or 1 on the terminal" << endl;
+    cin >> chosen_skill_index;
+    string chosen_skill = skills[chosen_skill_index];
+    printAction(chosen_skill, *opponent);
+}
 
 /**
 * @brief returns whether health is greater than 0

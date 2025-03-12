@@ -2,6 +2,7 @@
 #define RPG_H
 #include <string>
 #include <iostream>
+
 using namespace std;
 
 const int SKILL_SIZE = 2;
@@ -26,7 +27,8 @@ class RPG{
         int getHealth() const;
         int getStrength() const;
         int getDefense() const;
-
+        void displayStats(RPG player1, RPG player2);
+        void displayEnd(RPG player1, RPG player2);
 };
 
 #endif

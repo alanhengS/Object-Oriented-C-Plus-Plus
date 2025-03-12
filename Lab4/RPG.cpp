@@ -4,7 +4,7 @@
 
 RPG::RPG(){
     this->name = "NPC";
-    this->health = 50;
+    this->health = 100;
     this->strength = 10;
     this->defense = 0;
     this->type = "warrior";
@@ -95,3 +95,11 @@ int RPG::getDefense() const{
     return defense;
 }
 
+void RPG::displayStats(RPG player1, RPG player2){
+    cout << player1.getName() << " health: " << player1.getHealth() << " " << player2.getName() 
+    << " health: " << player2.getHealth() << endl;
+}
+
+void displayEnd(RPG player1, RPG player2){
+    
+}

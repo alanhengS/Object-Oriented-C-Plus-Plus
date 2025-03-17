@@ -1,7 +1,5 @@
 #include "RPG.h"
 
-
-
 RPG::RPG(){
     this->name = "NPC";
     this->health = 100;
@@ -62,12 +60,13 @@ void RPG::attack(RPG* opponent){
 void RPG::useSkill(RPG* opponent){
     int chosen_skill_index;
     for (int i = 0; i < SKILL_SIZE; i++){
-        printf("Skil %i: %s\n", i, skills[i].c_str());
+        printf("Skill %i: %s\n", i, skills[i].c_str());
     }
     cout << "Choose a skill to use: Enter 0 or 1 on the terminal" << endl;
     cin >> chosen_skill_index;
     string chosen_skill = skills[chosen_skill_index];
     printAction(chosen_skill, *opponent);
+    attack((opponent));
 }
 
 /**
@@ -95,11 +94,4 @@ int RPG::getDefense() const{
     return defense;
 }
 
-void RPG::displayStats(RPG player1, RPG player2){
-    cout << player1.getName() << " health: " << player1.getHealth() << " " << player2.getName() 
-    << " health: " << player2.getHealth() << endl;
-}
 
-void displayEnd(RPG player1, RPG player2){
-    
-}
